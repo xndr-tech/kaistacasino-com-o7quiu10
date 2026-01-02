@@ -1,0 +1,12 @@
+{
+  "name": "kaistacasino-com-o7quiu10",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brand protection",
+  "type": "module",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "wrangler": "^3.96.0",
+    "typescript": "^5.7.2"
+  }
+}

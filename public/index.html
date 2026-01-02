@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaista Casino - Nopeat Kotiutukset ja Parhaat Pelit</title>
+    <style>
+        /* RESET & CORE VARIABLES */
+        :root {
+            --bg-dark: #0f1218;
+            --bg-card: #1a1e29;
+            --accent: #d800ff; /* Neon Pink/Purple inspired by Buumi */
+            --accent-hover: #b000d1;
+            --text-main: #ffffff;
+            --text-muted: #8b95a5;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: white; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(15, 18, 24, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .nav-buttons .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .btn-login { background: transparent; border: 2px solid rgba(255,255,255,0.2); }
+        .btn-play { background-color: var(--accent); border: 2px solid var(--accent); box-shadow: 0 0 15px rgba(216, 0, 255, 0.4); }
+        .btn-play:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 8rem 1rem 4rem 1rem;
+            background: radial-gradient(circle at center, #2a1b3d 0%, var(--bg-dark) 70%);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-offer {
+            display: inline-block;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .offer-text { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; display: block; }
+        .offer-sub { font-size: 0.9rem; color: var(--accent); display: block; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .big-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--accent);
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        /* FEATURES STRIP */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 5%;
+            background: #151923;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .checkmark { color: var(--accent); font-weight: bold; }
+
+        /* GAMES GRID */
+        .games-section { padding: 4rem 5%; }
+        .section-title { margin-bottom: 2rem; font-size: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end; }
+        .section-title a { font-size: 0.9rem; color: var(--accent); }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .game-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            position: relative;
+            aspect-ratio: 1/1;
+        }
+
+        .game-card:hover { transform: translateY(-5px); }
+        
+        .game-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #232836, #1a1e29);
+            color: var(--text-muted);
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* INFO / SEO CONTENT */
+        .info-section {
+            padding: 4rem 15%;
+            background-color: var(--bg-card);
+            color: var(--text-muted);
+        }
+        .info-section h2 { color: white; margin-bottom: 1rem; }
+        .info-section p { margin-bottom: 1rem; }
+
+        /* FOOTER */
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            opacity: 0.5;
+        }
+
+        .footer-logo {
+            background: white;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .features { flex-direction: column; text-align: center; gap: 1rem; }
+            .info-section { padding: 3rem 5%; }
+            .nav-buttons .btn-login { display: none; } /* Hide login on small mobile to save space */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">KAISTA<span>CASINO</span></a>
+        <nav class="nav-buttons">
+            <a href="#" class="btn btn-login">Kirjaudu</a>
+            <a href="#" class="btn btn-play">Talleta ja Pelaa</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Täyttä vauhtia<br><span style="color:var(--accent);">voittoihin</span></h1>
+        <p>Suomen nopein kasino. Ei rekisteröitymistä.</p>
+
+        <div class="hero-offer">
+            <span class="offer-sub">Tervetulotarjous</span>
+            <span class="offer-text">100% Bonus 500€ asti + 200 ilmaiskierrosta</span>
+            <a href="#" class="big-btn">Pelaa Nyt</a>
+            <div style="margin-top: 15px; font-size: 0.8rem; color: #8b95a5;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Trustly_Logo.svg/1200px-Trustly_Logo.svg.png" alt="Trustly" style="height: 15px; vertical-align: middle; opacity: 0.7; filter: invert(1);"> 
+                Talleta verkkopankkitunnuksilla
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item"><span class="checkmark">✓</span> Nopeat kotiutukset</div>
+        <div class="feature-item"><span class="checkmark">✓</span> Verovapaat voitot</div>
+        <div class="feature-item"><span class="checkmark">✓</span> 24/7 Asiakaspalvelu</div>
+        <div class="feature-item"><span class="checkmark">✓</span> Päivittäinen Cashback</div>
+    </section>
+
+    <section class="games-section">
+        <div class="section-title">
+            <h2>Suosituimmat Pelit</h2>
+            <a href="#">Näytä kaikki ></a>
+        </div>
+        <div class="game-grid">
+            <div class="game-card"><div class="game-placeholder">Starburst</div></div>
+            <div class="game-card"><div class="game-placeholder">Book of Dead</div></div>
+            <div class="game-card"><div class="game-placeholder">Reactoonz</div></div>
+            <div class="game-card"><div class="game-placeholder">Gonzo's Quest</div></div>
+            <div class="game-card"><div class="game-placeholder">Fire Joker</div></div>
+            <div class="game-card"><div class="game-placeholder">Sweet Bonanza</div></div>
+            <div class="game-card"><div class="game-placeholder">Wolf Gold</div></div>
+            <div class="game-card"><div class="game-placeholder">Legacy of Dead</div></div>
+            <div class="game-card"><div class="game-placeholder">Gates of Olympus</div></div>
+            <div class="game-card"><div class="game-placeholder">Temple Tumble</div></div>
+            <div class="game-card"><div class="game-placeholder">Money Train 2</div></div>
+            <div class="game-card"><div class="game-placeholder">Jammin Jars</div></div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Miksi valita Kaista Casino?</h2>
+        <p>Kaista Casino tarjoaa modernin ja salamannopean pelikokemuksen suomalaisille pelaajille. Unohda hitaat rekisteröitymisprosessit – meillä pääset pelaamaan suoraan verkkopankkitunnuksillasi.</p>
+        <p>Valikoimastamme löydät yli 3000 kolikkopeliä, live-kasinon sekä pöytäpelit alan parhailta pelintarjoajilta. Kaikki voitot ovat täysin verovapaita, ja kotiutukset siirtyvät tilillesi jopa 5 minuutissa.</p>
+        <br>
+        <h3>Vastuullinen Pelaaminen</h3>
+        <p>Pelaaminen on hauskaa ajanvietettä, mutta siihen liittyy riskejä. Aseta itsellesi talletusrajat ja pelaa vain summalla, joka sinulla on varaa hävitä. Ikäraja rahapeleihin on 18 vuotta.</p>
+    </section>
+
+    <footer>
+        <div class="footer-logos">
+            <div class="footer-logo">VISA</div>
+            <div class="footer-logo">Mastercard</div>
+            <div class="footer-logo">Trustly</div>
+            <div class="footer-logo">Skrill</div>
+            <div class="footer-logo">Neteller</div>
+        </div>
+        <p>&copy; 2025 Kaista Casino. Kaikki oikeudet pidätetään.</p>
+        <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.6;">
+            Kaista Casino on rekisteröity tavaramerkki. Sivustoa operoi Kaista Gaming Ltd, joka on lisensoitu ja säännelty Euroopan Unionin lakien mukaisesti.
+        </p>
+    </footer>
+
+</body>
+</html>

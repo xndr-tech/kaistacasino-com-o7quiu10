@@ -1,0 +1,19 @@
+{
+  "name": "kaistacasino-com-o7quiu10",
+  "compatibility_date": "2026-01-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/index.ts",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "preview": {
+      "name": "kaistacasino-com-o7quiu10-preview"
+    }
+  }
+}
