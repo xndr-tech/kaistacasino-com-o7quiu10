@@ -4,16 +4,16 @@
   "name": "kaistacasino.com",
   "description": "Brand protection",
   "siteType": "one-page",
-  "colorScheme": "sage",
-  "font": "Work Sans",
+  "colorScheme": "purple",
+  "font": "Open Sans",
   "tags": [
-    "brand protection",
-    "casino brand protection",
-    "online reputation management",
-    "digital brand protection"
+    "brand protection services",
+    "online brand protection",
+    "domain protection",
+    "trademark enforcement"
   ],
   "tools": [],
   "model": "gemini-2.5-flash",
-  "createdAt": 1767350023476,
-  "updatedAt": 1767350023476
+  "createdAt": 1767350035721,
+  "updatedAt": 1767350035721
 }
